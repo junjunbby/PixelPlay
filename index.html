@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PixelPlay – Browsergames ohne Download</title>
+  <meta name="description" content="PixelPlay: kostenlose Browsergames direkt im Tab spielen. Action, Auto, Multiplayer, Puzzle und mehr." />
+
+  <!-- Google Fonts: Fredoka (rund & verspielt, für Überschriften) + Plus Jakarta Sans (Fließtext/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER (sticky) – Logo, Suche, Aktionen
+  ============================================================= -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="#" class="logo" aria-label="PixelPlay Startseite">
+        <span class="logo-icon" aria-hidden="true">🕹️</span>
+        <span class="logo-text">Pixel<span class="logo-accent">Play</span></span>
+      </a>
+
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+          <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <input
+          type="search"
+          id="searchInput"
+          class="search-input"
+          placeholder="Spiele suchen …"
+          aria-label="Spiele suchen"
+        />
+      </div>
+
+      <nav class="header-actions" aria-label="Schnellzugriff">
+        <button class="icon-btn" type="button" aria-label="Favoriten">♥</button>
+        <button class="icon-btn icon-btn--primary" type="button" aria-label="Menü öffnen">☰</button>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO – "Spiel des Tages"
+         Inhalt wird per JS aus games.js-Daten befüllt (renderFeatured)
+    ============================================================= -->
+    <section class="hero" id="featuredHero" aria-label="Spiel des Tages">
+      <!-- wird von script.js gefüllt -->
+    </section>
+
+    <!-- ============================================================
+         KATEGORIE-FILTER
+         Buttons werden per JS aus den vorhandenen Kategorien erzeugt
+    ============================================================= -->
+    <section class="filter-bar" aria-label="Kategorie-Filter">
+      <div class="filter-inner" id="filterBar">
+        <!-- wird von script.js gefüllt -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SPIELE-GRID
+    ============================================================= -->
+    <section class="games-section">
+      <div class="section-heading">
+        <h2 id="gridTitle">Alle Spiele</h2>
+        <span class="game-count" id="gameCount"></span>
+      </div>
+
+      <div class="games-grid" id="gamesGrid">
+        <!-- wird von script.js gefüllt -->
+      </div>
+
+      <p class="no-results" id="noResults" hidden>
+        Keine Spiele gefunden 🕵️ — versuch's mit einem anderen Filter oder Suchbegriff.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Platzhalter-Footer · © 2026 PixelPlay · nur zu Demozwecken</p>
+  </footer>
+
+  <!-- Toast-Element für kurze Meldungen (z.B. beim Klick auf eine Spiel-Karte) -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
